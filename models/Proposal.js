@@ -1,34 +1,39 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Shema
 const ProposalSchema = new Schema({
-  Name:{
-    type:String,
-    required: true
-  },
-  Email:{
+  name: {
     type: String,
-    required: true
+    required: [true, "El campo name es requerido."]
   },
-  Category: {
+  email: {
+    type: String,
+    required: [true, "El campo email es requerido."]
+  },
+  category: {
     type: Number,
-    required: true
+    required: [true, "El campo category es requerido."]
   },
-  Title: {
+  title: {
+    type: String,
+    required: [true, "El campo title es requerido."]
+  },
+  content: {
     type: String,
     required: true
   },
-  Content: {
-    type:String,
-    required: true
-  },
-  Approved: {
-    type:Boolean,
+  approved: {
+    type: Boolean,
     required: true,
     default: false
+  },
+  createat: {
+    type: Date,
+    required: true,
+    default: Date.now
   }
 });
 
 // Create collection and add schema
-mongoose.model('proposal', ProposalSchema);
+mongoose.model("proposal", ProposalSchema);

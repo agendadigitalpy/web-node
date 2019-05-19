@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
-const { getInformacion } = require('../services')
+const { getInformacion } = require('../services');
+const Propuestas = require('./propuestas')
 const Proposal = mongoose.model('proposal');
 
 
@@ -28,10 +29,6 @@ router.get('/documentacion', (req, res, next) => {
   res.render('index/documentacion');
 });
 
-router.get('/propuestas', (req, res, next) => {
-  res.render('index/propuestas');
-});
-
 router.get('/solicitudes', (req, res, next) => {
   getInformacion()
   .then(solicitudes => {
@@ -40,5 +37,18 @@ router.get('/solicitudes', (req, res, next) => {
     });
   }); 
 });
+
+router.get('/propuestas', (req, res, next) => {
+  Proposal.find()
+    .sort({createat:'desc'})
+    .then(rows => {
+      console.log(rows)
+      res.render('index/propuestas', {
+        proposals: rows
+      });
+    });
+});
+
+router.use('/propuesta', Propuestas);
 
 module.exports = router;

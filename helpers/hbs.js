@@ -13,5 +13,16 @@ module.exports = {
   },
   formatDate: function(date, format){
     return moment(date).format(format);
-  }
+	},
+	categoryStr: function(id) {
+		const values = [
+			'General',
+			'1. Gobierno Digital',
+			'2. Economia Digital',
+			'3. Conectividad',
+			'4. Fortalecimiento Institucional'
+		];
+		console.log(values[id]);
+		return values[id];
+	}
 }

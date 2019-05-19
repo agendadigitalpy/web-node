@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const volleyball = require('volleyball');
 const mongoose = require('mongoose');
 
 // Load Models
@@ -16,7 +17,8 @@ const keys = require('./config');
 //Handlebars Helpers
 const {
   truncate,
-  formatDate
+  formatDate,
+  categoryStr
 } = require('./helpers/hbs');
 
 // Map global promises
@@ -32,11 +34,15 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+// log request
+app.use(volleyball)
+
 // Handlebars Middleware
 app.engine('handlebars', exphbs({
   helpers: {
     truncate: truncate,
-    formatDate:formatDate
+    formatDate: formatDate,
+    categoryStr: categoryStr
   },
   defaultLayout:'main'
 }));

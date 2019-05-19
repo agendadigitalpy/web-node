@@ -22,7 +22,7 @@
   </header>
 
   <section>
-    <form method="post" action="/propuestas">
+    <form method="post" action="/api/propuestas">
       <div class="row gtr-uniform">
         <div class="col-6 col-12-xsmall">
           <input type="text" name="name" value="" placeholder="Nombre" required>
@@ -57,7 +57,7 @@
     </form>
   </section>
 
-  {{!-- <section>
+  <section>
     <h3>Últimas propuestas recibidas</h3>
     <div class="table-wrapper">
       <table class="alt">
@@ -71,19 +71,19 @@
           </tr>
         </thead>
         <tbody>
-          {{ range .proposals }}
+          {{#each proposals}}
           <tr>
-            <td>{{ .Date }}</td>
-            <td>{{ .Category }}</td>
-            <td>{{ .TruncatedTitle }}</td>
-            <td>{{ .TruncatedContent }}</td>
-            <td><a href="/propuestas/{{ .ID }}">Ver</a></td>
+            <td>{{ formatDate createat 'DD/MM/YY' }}</td>
+            <td>{{ categoryStr category }}</td>
+            <td>{{ truncate title 15 }}</td>
+            <td>{{ truncate content 25 }}</td>
+            <td><a href="/propuesta/{{ id }}">Ver</a></td>
           </tr>
-          {{ end }}
+          {{/each}}
         </tbody>
       </table>
     </div>
-  </section> --}}
+  </section>
 
   <section>
     <p><a href="/" class="button icon fa-home">Volver al inicio</a></p>

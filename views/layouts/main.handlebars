@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>#AgendaDigital Paraguay</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/extra.css" />
+	<link rel="icon" type="image/png" href="assets/images/logo.png"/>
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<div id="wrapper">
+		
+    {{> _header}}
+
+		<div id="main">
+			{{{ body }}}
+		</div>
+
+    {{!-- Footer --}}
+    {{> _footer}}
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139964338-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-139964338-1');
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "web-node",
+  "version": "1.0.0",
+  "description": "Web para Agenda Digital PY",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/agendadigitalpy/web-node.git"
+  },
+  "keywords": [
+    "agendadigitalpy",
+    "node",
+    "mongodb"
+  ],
+  "author": "Cabu Vallejos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agendadigitalpy/web-node/issues"
+  },
+  "homepage": "https://github.com/agendadigitalpy/web-node#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.9",
+    "volleyball": "^1.5.1"
+  }
+}

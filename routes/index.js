@@ -28,6 +28,10 @@ router.get('/documentacion', (req, res, next) => {
   res.render('index/documentacion');
 });
 
+router.get('/propuestas', (req, res, next) => {
+  res.render('index/propuestas');
+});
+
 router.get('/solicitudes', (req, res, next) => {
   getInformacion()
   .then(solicitudes => {

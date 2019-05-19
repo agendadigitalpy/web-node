@@ -1,0 +1,35 @@
+<div class="inner">
+  <header>
+    <h3>Solicitudes de información pública enviadas a MITIC</h3>
+  </header>
+  <section>
+    <div class="table-wrapper">
+      <table class="alt">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Asunto</th>
+            <th>Dias Faltantes</th>
+            <th>Enlace</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each solicitudes}}
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>{{ titulo }}</td>
+            <td>
+              {{ diasHabilesFaltantes }} días
+            </td>
+            <td><a target="_blank"
+                href="http://informacionpublica.paraguay.gov.py/portal/#!/ciudadano/solicitud/{{ id }}">Ver</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section>
+    <p><a href="/" class="button icon fa-home">Volver al inicio</a></p>
+  </section>
+</div>

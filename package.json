@@ -27,7 +27,7 @@
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "lodash": ">=4.17.13",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.7.5",
     "request": "^2.88.0",
     "volleyball": "^1.5.1"
